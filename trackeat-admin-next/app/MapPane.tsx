@@ -1,1 +1,1 @@
-
+<MapPane markers={[...]} />
