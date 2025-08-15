@@ -1,0 +1,69 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 560'>
+    <defs>
+      <linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'>
+        <stop offset='0' stop-color='#0b1220'/>
+        <stop offset='1' stop-color='#111b33'/>
+      </linearGradient>
+      <linearGradient id='pin' x1='0' y1='0' x2='1' y2='1'>
+        <stop offset='0' stop-color='#ff4d4f'/><stop offset='1' stop-color='#ff8a00'/>
+      </linearGradient>
+      <filter id='soft' x='-20%' y='-20%' width='140%' height='140%'>
+        <feGaussianBlur in='SourceGraphic' stdDeviation='2' result='b'/>
+      </filter>
+    </defs>
+
+    <rect width='900' height='560' fill='url(#bg)'/>
+
+    <g font-family='Arial, Helvetica, sans-serif' fill='#e5e7eb'>
+      <text x='36' y='54' font-size='28' font-weight='700'>Fila ao vivo + Roteirização</text>
+      <text x='36' y='90' font-size='16' fill='#94a3b8'>Localização do motoboy em tempo real</text>
+    </g>
+
+    <g stroke='#1f2a44' stroke-width='8' opacity='.6'>
+      <path d='M40 150 H860 M40 210 H860 M40 270 H860 M40 330 H860 M40 390 H860 M40 450 H860'/>
+      <path d='M120 120 V520 M210 120 V520 M300 120 V520 M390 120 V520 M480 120 V520 M570 120 V520 M660 120 V520 M750 120 V520'/>
+    </g>
+    <g stroke='#253659' stroke-width='4' opacity='.7'>
+      <path d='M80 170 H840 M80 230 H840 M80 290 H840 M80 350 H840 M80 410 H840'/>
+      <path d='M160 140 V500 M250 140 V500 M340 140 V500 M430 140 V500 M520 140 V500 M610 140 V500 M700 140 V500'/>
+    </g>
+
+    <path d='M180 440 C 260 400, 300 360, 360 350 S 480 330, 520 300 S 620 240, 680 230 S 740 220, 760 210' 
+          fill='none' stroke='#22c55e' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/>
+
+    <g transform='translate(180,440)'>
+      <circle r='42' fill='#0e1a2e' stroke='#22c55e' stroke-width='3'/>
+      <g transform='translate(-22,-6)'>
+        <circle cx='18' cy='36' r='10' fill='#12243f'/>
+        <circle cx='58' cy='36' r='10' fill='#12243f'/>
+        <path d='M10 30 h20 l6 -10 h14 a8 8 0 0 1 8 8 v2 h-8' fill='none' stroke='#e5e7eb' stroke-width='3' stroke-linecap='round'/>
+        <rect x='28' y='14' width='10' height='10' rx='2' fill='#ff8a00'/>
+        <circle cx='44' cy='18' r='5' fill='#e5e7eb'/>
+      </g>
+      <text x='0' y='62' text-anchor='middle' font-size='12' fill='#94a3b8'>Motoboy — João</text>
+    </g>
+
+    <g transform='translate(760,210)'>
+      <path d='M0 0 C 0 -38, 30 -68, 68 -68 C 106 -68, 136 -38, 136 0 C 136 48, 68 126, 68 126 C 68 126, 0 48, 0 0Z' fill='url(#pin)'/>
+      <circle cx='68' cy='-6' r='34' fill='#ffffff'/>
+      <path d='M50 -20 L92 -6 L50 8 Z' fill='#ffcc66'/>
+      <circle cx='60' cy='-10' r='3' fill='#c2410c'/>
+      <circle cx='72' cy='-6' r='3' fill='#c2410c'/>
+      <circle cx='62' cy='2' r='3' fill='#c2410c'/>
+      <g transform='translate(68,126)'><ellipse rx='26' ry='6' fill='#ff4d4f' opacity='.15' filter='url(#soft)'/></g>
+      <text x='68' y='154' text-anchor='middle' font-size='12' fill='#94a3b8'>Destino</text>
+    </g>
+
+    <g transform='translate(36,120)'>
+      <rect width='828' height='110' rx='12' fill='rgba(255,255,255,0.06)'/>
+      <g fill='#cbd5e1' font-family='Arial, Helvetica, sans-serif' font-size='14'>
+        <text x='16' y='34'>Pedido #15874</text>
+        <text x='16' y='60'>Endereço: Rua das Palmeiras, 250</text>
+        <text x='16' y='86'>Motoboy: João • ETA: 11 min • Distância: 3,2 km</text>
+      </g>
+      <g transform='translate(640,24)'>
+        <rect width='160' height='64' rx='10' fill='#ff8a00'/>
+        <text x='80' y='41' text-anchor='middle' font-size='18' font-weight='700' fill='#0b1220'>Acompanhar</text>
+      </g>
+    </g>
+</svg>
