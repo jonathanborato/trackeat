@@ -8,14 +8,14 @@
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="%23ff4d4f"/><stop offset="1" stop-color="%23ff8a00"/></linearGradient></defs><path fill="%230f172a" d="M0 0h64v64H0z"/><path fill="url(%23g)" d="M32 6c10.5 0 19 8.5 19 19 0 13.5-19 33-19 33S13 38.5 13 25c0-10.5 8.5-19 19-19z"/><circle cx="32" cy="25" r="8" fill="white"/><path fill="%23ff4d4f" d="M32 20c3 0 5 2 5 5 0 3-2 5-5 5-1.2 0-2.3-.4-3.2-1.1l8.1-6.2C35.8 21 34 20 32 20z"/></svg>' />
   <style>
     :root{
-      --bg: #0f172a;
-      --panel:#111827;
-      --text:#e5e7eb;
-      --muted:#94a3b8;
-      --brand:#ff4d4f;
-      --brand-2:#ff8a00;
-      --ok:#22c55e;
-      --card:#0b1220;
+      --bg: #0f172a;      /* slate-900 */
+      --panel:#111827;    /* gray-900 */
+      --text:#e5e7eb;     /* gray-200 */
+      --muted:#94a3b8;    /* slate-400 */
+      --brand:#ff4d4f;    /* red */
+      --brand-2:#ff8a00;  /* orange */
+      --ok:#22c55e;       /* green */
+      --card:#0b1220;     /* deep */
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1220 0%,#0f172a 40%,#0b1220 100%);color:var(--text);font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";}
@@ -32,9 +32,9 @@
     .btn-outline{border-color:rgba(255,255,255,.15);color:var(--text);background:transparent}
     .hero{padding:64px 0 32px}
     .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
-    .title{font-size:44px;line-height:1.05;margin:12px 0 12px;font-weight:900}
+    .title{font-size:clamp(28px,6vw,48px);line-height:1.05;margin:12px 0 12px;font-weight:900}
     .title .accent{background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .subtitle{font-size:18px;color:var(--muted);max-width:720px}
+    .subtitle{font-size:clamp(16px,2.4vw,20px);color:var(--muted);max-width:720px}
     .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
     .glass{border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
     .hero-card{padding:18px}
@@ -42,22 +42,18 @@
     .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
     .metric{padding:16px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);text-align:center}
     .metric b{font-size:22px;display:block}
-
     .section{padding:60px 0}
     .section h2{font-size:28px;margin:0 0 12px}
     .section p.lead{color:var(--muted);max-width:760px}
-
     .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
     .feature{padding:18px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
     .feature h3{margin:8px 0 6px;font-size:18px}
     .feature p{color:var(--muted);margin:0}
-
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
     .step{padding:18px;border-radius:18px;background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.12)}
     .step-num{width:32px;height:32px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:flex;align-items:center;justify-content:center;color:#0b1220;font-weight:900}
     .step h4{margin:10px 0 6px}
     .step p{margin:0;color:var(--muted)}
-
     .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
     .plan{padding:22px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
     .plan.highlight{background:linear-gradient(180deg,rgba(255,77,79,.08),rgba(255,138,0,.08));border-color:rgba(255,255,255,.2)}
@@ -65,17 +61,13 @@
     .price small{font-size:12px;color:var(--muted)}
     .plan ul{margin:12px 0 0;padding:0;list-style:none}
     .plan li{padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
-
     .faq{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
     .qa{padding:16px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)}
     .qa summary{cursor:pointer;font-weight:700}
     .qa p{color:var(--muted)}
-
     .footer{padding:26px 0;border-top:1px solid rgba(255,255,255,.06);color:#a8b3cf}
-
     .integrations{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:18px;opacity:.9}
     .logo-box{padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);text-align:center;font-size:12px;color:#cbd5e1}
-
     .mobile-menu{display:none}
 
     @media (max-width: 980px){
@@ -88,12 +80,19 @@
       .mobile-menu{display:block}
       nav ul{display:none}
     }
+    @media (max-width: 640px){
+      .metrics{grid-template-columns:1fr 1fr}
+      .cta .btn{width:100%}
+      .hero{padding:40px 0 24px}
+      .nav{height:64px}
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
       <a class="logo" href="#top" aria-label="TrackEat - Início">
+        <!-- Inline SVG LOGO -->
         <svg viewBox="0 0 160 160" role="img" aria-label="TrackEat Logo" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
@@ -101,8 +100,11 @@
               <stop offset="1" stop-color="#ff8a00"/>
             </linearGradient>
           </defs>
+          <!-- Pin base -->
           <path d="M80 12c33 0 60 27 60 60 0 43-60 108-60 108S20 115 20 72c0-33 27-60 60-60z" fill="url(#grad)"/>
+          <!-- Route stroke -->
           <path d="M45 70c18-22 40-22 62-4 10 8 19 11 27 9" fill="none" stroke="#0b1220" stroke-width="10" stroke-linecap="round" opacity=".25"/>
+          <!-- Pizza slice marker -->
           <g transform="translate(80 72)">
             <circle r="22" fill="#ffffff"/>
             <path d="M-8 -8 L14 0 L-8 8 Z" fill="#ffcc66"/>
@@ -150,7 +152,7 @@
         </div>
         <div class="hero-card glass">
           <h3>Fila ao vivo + Roteirização</h3>
-          <img alt="Mock de painel TrackEat" style="width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.08)" src="data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 560'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='#0b1220'/><stop offset='1' stop-color='#111b33'/></linearGradient></defs><rect fill='url(#g)' width='900' height='560'/><g font-family='Arial' fill='#e5e7eb'><text x='36' y='50' font-size='28' font-weight='700'>Painel TrackEat</text><text x='36' y='92' font-size='16' fill='#94a3b8'>Pedidos ativos • Entregadores próximos • SLAs</text></g><g transform='translate(36,120)'><rect width='828' height='120' rx='12' fill='rgba(255,255,255,0.06)'/><g fill='#cbd5e1' font-family='Arial' font-size='14'><text x='16' y='34'>Pedido #15872</text><text x='16' y='60'>Endereço: Rua X, 123</text><text x='16' y='86'>Tempo estimado: 12 min</text></g><g transform='translate(640,28)'><rect width='160' height='64' rx='10' fill='#ff4d4f'/><text x='20' y='40' font-size='18' font-weight='700' fill='#0b1220'>Despachar</text></g></g><g transform='translate(36,260)'><rect width='828' height='120' rx='12' fill='rgba(255,255,255,0.06)'/><g fill='#cbd5e1' font-family='Arial' font-size='14'><text x='16' y='34'>Pedido #15873</text><text x='16' y='60'>Endereço: Av. Y, 890</text><text x='16' y='86'>Tempo estimado: 10 min</text></g><g transform='translate(640,28)'><rect width='160' height='64' rx='10' fill='#ff8a00'/><text x='20' y='40' font-size='18' font-weight='700' fill='#0b1220'>Atribuir</text></g></g><g transform='translate(36,406)'><rect width='828' height='120' rx='12' fill='rgba(255,255,255,0.06)'/><g fill='#cbd5e1' font-family='Arial' font-size='14'><text x='16' y='34'>Mapa • Fila (12) • SLA</text></g><g transform='translate(560,20)'><circle cx='40' cy='40' r='40' fill='#22c55e' opacity='.25'/><path d='M10 40 C 50 0, 80 80, 120 40' fill='none' stroke='#22c55e' stroke-width='6'/></g></g></svg>`)}"/>
+          <img alt="Mock de painel TrackEat" style="width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.08)" src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 560'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop stop-color='#0b1220'/><stop offset='1' stop-color='#111b33'/></linearGradient></defs><rect fill='url(#g)' width='900' height='560'/><g font-family='Arial' fill='#e5e7eb'><text x='36' y='50' font-size='28' font-weight='700'>Painel TrackEat</text><text x='36' y='92' font-size='16' fill='#94a3b8'>Pedidos ativos • Entregadores próximos • SLAs</text></g><g transform='translate(36,120)'><rect width='828' height='120' rx='12' fill='rgba(255,255,255,0.06)'/><g fill='#cbd5e1' font-family='Arial' font-size='14'><text x='16' y='34'>Pedido #15872</text><text x='16' y='60'>Endereço: Rua X, 123</text><text x='16' y='86'>Tempo estimado: 12 min</text></g><g transform='translate(640,28)'><rect width='160' height='64' rx='10' fill='#ff4d4f'/><text x='20' y='40' font-size='18' font-weight='700' fill='#0b1220'>Despachar</text></g></g><g transform='translate(36,260)'><rect width='828' height='120' rx='12' fill='rgba(255,255,255,0.06)'/><g fill='#cbd5e1' font-family='Arial' font-size='14'><text x='16' y='34'>Pedido #15873</text><text x='16' y='60'>Endereço: Av. Y, 890</text><text x='16' y='86'>Tempo estimado: 10 min</text></g><g transform='translate(640,28)'><rect width='160' height='64' rx='10' fill='#ff8a00'/><text x='20' y='40' font-size='18' font-weight='700' fill='#0b1220'>Atribuir</text></g></g><g transform='translate(36,406)'><rect width='828' height='120' rx='12' fill='rgba(255,255,255,0.06)'/><g fill='#cbd5e1' font-family='Arial' font-size='14'><text x='16' y='34'>Mapa • Fila (12) • SLA</text></g><g transform='translate(560,20)'><circle cx='40' cy='40' r='40' fill='#22c55e' opacity='.25'/><path d='M10 40 C 50 0, 80 80, 120 40' fill='none' stroke='#22c55e' stroke-width='6'/></g></g></svg>"/>
           <div style="display:flex;gap:10px;align-items:center;margin-top:12px">
             <span class="badge">✅ Sem fidelidade</span>
             <span class="badge">⚙️ Fácil integração</span>
@@ -182,7 +184,7 @@
         </div>
         <div class="feature">
           <h3>🔌 Integrações simples</h3>
-          <p>Conecta com iFood, apps próprios e ERPs via API webhooks e planilhas.</p>
+          <p>Conecta com iFood, apps próprios e ERPs via API, webhooks e planilhas.</p>
         </div>
         <div class="feature">
           <h3>📊 Relatórios</h3>
@@ -237,7 +239,7 @@
           <ul>
             <li>Roteirização básica</li>
             <li>Fila de entregadores (até 10)</li>
-            <li>Integração planilha</li>
+            <li>Integração por planilha</li>
             <li>Relatórios essenciais</li>
           </ul>
           <div class="cta" style="margin-top:16px"><a class="btn btn-outline" href="#demo">Testar</a></div>
@@ -296,13 +298,14 @@
   <footer class="footer">
     <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
       <div class="logo" style="opacity:.9">
+        <!-- Mini wordmark reuse -->
         <svg viewBox="0 0 160 160" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff4d4f"/><stop offset="1" stop-color="#ff8a00"/></linearGradient></defs><path d="M80 12c33 0 60 27 60 60 0 43-60 108-60 108S20 115 20 72c0-33 27-60 60-60z" fill="url(#g2)"/><circle cx="80" cy="72" r="18" fill="#fff"/></svg>
         <span class="wordmark">TrackEat</span>
       </div>
       <div style="display:flex;gap:16px;align-items:center">
         <a href="#precos">Planos</a>
         <a href="#faq">FAQ</a>
-        <a href="mailto:contato@trackeat.com">Contato</a>
+        <a href="mailto:jonathanfborato@gmail.com">Contato</a>
         <span style="color:#6b7280">© <span id="year"></span> TrackEat</span>
       </div>
     </div>
@@ -324,7 +327,7 @@
       const loja = encodeURIComponent(f.loja.value);
       const msg  = encodeURIComponent(f.msg.value);
       const texto = `Olá! Sou ${nome} (%20${whats}). Loja: ${loja}. ${msg} `;
-      const url = `https://wa.me/5541995629072?text=${texto}`; // Troque pelo seu número
+      const url = `https://wa.me/5541995629072?text=${texto}`;
       window.open(url, '_blank');
       return false;
     }
